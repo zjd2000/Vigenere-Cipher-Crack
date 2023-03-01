@@ -1,13 +1,3 @@
-# Assignment 1
-
-**Name: Zhu Jiadong**
-
-**ID: 122033910178**
-
-**DDL: 2023.3.5**
-
-
-
 *Contents:*
 
 [TOC]
