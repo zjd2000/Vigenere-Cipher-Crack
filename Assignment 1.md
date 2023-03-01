@@ -30,14 +30,12 @@ class Cipher(object):
         return string
     def a2i(self, ch):
         ch = ch.upper()
-        arr = {
-              'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 				8,'J': 9, 'K': 10,'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 				16,'R': 17, 'S': 18, 'T': 19, 'U': 20,'V': 21, 'W': 22, 'X': 23, 				'Y': 24,'Z': 25}
+        arr = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7, 'I': 8,'J': 9, 'K': 10,'L': 11, 'M': 12, 'N': 13, 'O': 14, 'P': 15, 'Q': 16,'R': 17, 'S': 18, 'T': 19, 'U': 20,'V': 21, 'W': 22, 'X': 23, 'Y': 24,'Z': 25}
         return arr[ch]
 
 	def i2a(self, i):
         i = i % 26
-        arr = (
-				'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 				'N','O','P', 'Q', 'R', 'S', 'T', 'U', 'V','W', 'X', 'Y', 'Z')
+        arr = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N','O','P', 'Q', 'R', 'S', 'T', 'U', 'V','W', 'X', 'Y', 'Z')
         return arr[i]
     def remove_punctuation(self, text, filter='[^A-Z]'):
         return re.sub(filter, '', text.upper())
@@ -236,7 +234,7 @@ We define the quasi coincidence index as $\mathcal{X}=\sum_{i=1}^np_iq_i$, $p_i$
 ```python
 def chi(ciphertext):
     cipher = ciphertext
-    standard = {'A': 0.082, 'B': 0.015, 'C': 0.028, 'D':0.043, 'E': 0.127, 'F': 0.022, 'G': 0.020,'H': 0.061,'I': 0.070, 'J': 0.002, 'K':0.008, 'L': 0.040, 'M': 0.024, 'N': 0.067, 					'O': 0.075, 'P': 0.019, 'Q': 0.001, 'R': 					0.060, 'S': 0.063, 'T': 0.091, 'U': 0.028, 					'V': 0.010, 'W': 0.023, 'X': 0.001,'Y': 					0.020, 'Z': 0.001}
+    standard = {'A': 0.082, 'B': 0.015, 'C': 0.028, 'D':0.043, 'E': 0.127, 'F': 0.022, 'G': 0.020,'H': 0.061,'I': 0.070, 'J': 0.002, 'K':0.008, 'L': 0.040, 'M': 0.024, 'N': 0.067, 'O': 0.075, 'P': 0.019, 'Q': 0.001, 'R': 0.060, 'S': 0.063, 'T': 0.091, 'U': 0.028,'V': 0.010, 'W': 0.023, 'X': 0.001,'Y': 0.020, 'Z': 0.001}
     frequency = standard.copy()
     corelation = [0] * 26
     length = len(cipher)
